@@ -1,7 +1,7 @@
 ---
 title: POL Blackscreen Issues on Linux
 layout: post
-nav_order: 13
+parent: Linux
 ---
 # Black screen PlayOnline issue when launching FFXI
 
