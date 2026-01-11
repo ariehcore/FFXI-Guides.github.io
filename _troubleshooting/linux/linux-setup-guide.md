@@ -23,7 +23,7 @@ Personally I recommend avoiding using Steam to install FFXI and instead installi
 
 For Windower you can then install the `Windower 4 Live version` after this. There are also some extra steps and troubleshooting tips mentioned on the [Windower guide](https://docs.windower.net/linux/) as well if you run into any issues.
 
-This guide will not cover installing Ashita after installing FFXI currently, but [Ridge's guide](https://bin.68degrees.no/?678efeeb84b354e8#5ehU14BvFHo5MBwSMJ4RBwRPwhW9QaF83BJiXR7E3CzL) for setting up FFXI on Linux with Ashita is a very good resource to follow in this case.
+This guide will not cover installing Ashita after installing FFXI currently, but [Ridge's guide](https://bin.68degrees.no/?678efeeb84b354e8#5ehU14BvFHo5MBwSMJ4RBwRPwhW9QaF83BJiXR7E3CzL) for setting up FFXI on Linux with Ashita is a very good resource to follow.
 
 ### Long guide
 
@@ -35,7 +35,6 @@ Integrated GPU: Intel HD Graphics 630
 Discrete GPU: NVIDIA GeForce GTX 1050 Mobile
 Memory: 16GB
 Locale: en_GB.UTF-8
-Kernel: 
 ```
 
 #### Installing FFXI via Lutris
@@ -48,16 +47,22 @@ This guide assumes you have not installed Lutris and that you use your PC in Eng
     * For debian-based distros: `sudo apt get update && sudo apt install lutris`
     * For arch-based distros: 
         * Using pacman: `sudo pacman -Sy lutris`
-        * Using paru `paru -Sy lutris`
+        * Using paru: `paru -Sy lutris`
         * For CachyOS users: Install both of the packages mentioned on [this page](https://wiki.cachyos.org/configuration/gaming/) on their wiki if you have not already. Despite being packaged separately, the `cachyos-gaming-meta` package is a requirement.
-    * For fedora-based distros: `sudo dnf install lutris`
-    * For Bazzite, Lutris may already be preinstalled, but if it isn't you can download it from the Bazaar or using the command `ujust install lutris`
+    * For Fedora-based distros: `sudo dnf install lutris`
+    * For Bazzite, Lutris should be preinstalled by default, but if it is not installed you can download it from the Bazaar application.
 2. Open up Lutris and click on the `+` button in the top left hand corner.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20250909_121312.png)
 3. A new window will open, click on the first option `Search the Lutris website for installers`.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20250909_121344.png)
 4. Enter the search term `Final Fantasy XI Online` and click on the first option.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20250909_121520.png)
 5. Once the next page loads with the options of what version to pick, pick `Full (US)` and click install.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20250909_121834.png)
 6. It will now prompt you to pick an install location (use the default if you are unsure) and whether you want to create shortcuts elsewhere on your system for this. Click `Continue` to proceed to the next screen.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20250909_122128.png)
 7. Lutris will now ask you whether you wish to provide files locally or whether it should download the files while doing the install process. Unless you're on a metered internet conneciton, I recommend downloading the files fresh so that it can install a fresh copy of FFXI. Currently this download is around 7.5GB.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20250909_122131.png)
 8. Click `Install` to begin the installation process. This will take some time (like possibly 15 - 20 minutes), so just keep an eye on it for any errors that may occur during the installation process.
     * If errors do occur, check below in the Troubleshooting selection to see if your error was covered otherwise copy the error log to a text file and have it handy for if someone asks "what error happened?"
 9. If no errors occurred and you see the following screen, then you now have a copy of FFXI installed onto your PC! 
@@ -66,16 +71,16 @@ This guide assumes you have not installed Lutris and that you use your PC in Eng
 
 #### Installing and configuring Windower in Lutris
 
-1. Open up Lutris and click on the `+` button in the top left hand corner.
-2. A new window will open, click on the first option `Search the Lutris website for installers`.
-3. Enter the search term `Final Fantasy XI Online` and click on the first option.
-4. Search for the option called `Windower 4 Live` in the list and click `Install` on that option.
-5. It will now prompt you to pick an install location (use the default if you are unsure) and whether you want to create shortcuts elsewhere on your system for this. Click `Continue` to proceed to the next screen.
-6. Lutris will now install `Windower 4` based on your already existing FFXI installation.
-7. After that, you should see `Windower 4` in the main window on Lutris.
+This guide assumes that you have a copy of Final Fantasy XI Online already set up via Lutris.
 
-### Should I change my Linux distribution to make FFXI run better?
-No. Unless FFXI is that important to you, I do not think it's worth changing distributions just for FFXI. 
+1. Open up Lutris and right click on your existing install of Final Fantasy XI Online and click the option `Install another version`.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20260111_174559.png)
+2. Look for the option called `Windower 4 Live` in the list and click `Install` on that option.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20260111_174924.png)
+3. It will now prompt you to pick a source for installing Windower 4, similar to how you picked the install file location for when you were installing FFXI. Click `Install` to continue, this will download the latest version of `Windower 4` directly from the Windower website.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20260111_174924.png)
+4. Lutris will now install `Windower 4` based on your already existing FFXI installation.
+5. After that, you should see `Windower 4` in the main window on Lutris and can launch Windower from there.
 
 ## FAQ
 
@@ -83,14 +88,29 @@ No. Unless FFXI is that important to you, I do not think it's worth changing dis
 While it can work in some cases, you should not use versions higher than v2.8.2, they will not work at all. Ideally if the game works with just dxvk, then you should be ok. 
 
 ### Which wine/proton version should I use?
-There are various versions you should not use without specific fixes due to a stuttering issue that exists in some versions of Wine. From experience / other members of the FFXI Community, these are the versions of Wine/Proton that are recommended for playing FFXI with.
+There are various versions you should not use without specific fixes due to a stuttering issue that exists in some versions of Wine. From experience / other members of the FFXI Community, these are the versions of Wine/Proton that people will generally recommend for playing FFXI with.
 
-* `proton-cachyos`
-* Wine `9.15-9.21` or `10.x` 
+* Wine `9.15-9.21` or `10.x`
+* `GE-Proton-10-15` or `GE-Proton-10-21` 
+
+#### Important note for when you bind a controller
+If you are trying to bind a controller to your copy of FFXI and use a version of Proton/Wine with version number 9 or newer, you may need to an older version of Proton/Wine in order to bind your controller at all. Newer versions of Proton will hijack your gamepad inputs for dialog boxes and this can make binding them legitimately impossible. 
+
+Using an older Proton version will work, I personally used the following version below, but I think that any older wine version will work for setting this up.
+![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20260111_180210.png)
+*Wine version selected in the window currently is `wine-ge-8-26-x86_64`*
+
+### Should I change my Linux distribution to make FFXI run better?
+No. Usually the Linux distribution does not matter so much for making FFXI run better and this is not something that is recommended to do in any case. If you wish change distribution, just make a copy of the `Final Fantasy XI Online` folder so that you do not have to redownload all the patches every time you reinstall the game.  
 
 ## Troubleshooting
 
-### Why does my Lutris install fail?
+### What is the rundll32.exe error I see when launching FFXI sometimes?
+Usually if you change the wine version you use, or are launching a fresh install of FFXI for the first time, there will be a dialog box which opens (as shown in the image below) that states that the application `rundll32.exe` could not be started. You can click `No` on this dialog box and then the game should launch as normal.
+
+![rundll32.exe window](/assets/images/troubleshooting/linux-guide/Screenshot_20260111_175921.png)
+
+### Why does the FFXI install in Lutris fail?
 
 #### Sanity checks
 * Make sure some form of `wine` is installed separately to Lutris. 
@@ -110,6 +130,8 @@ You can either clear the files from the Lutris cache, or you can link to them di
     5. In the tab `Runner options`, set the Wine version to `System (10.x)`
 
 ## I've installed FFXI but my game won't launch, what should I check?
+
+TODO: add this
 
 ## Glossary
 
