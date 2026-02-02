@@ -5,7 +5,9 @@ parent: Linux
 ---
 # Black screen PlayOnline issue when launching FFXI
 
-###### Author: Arieh @ Bahamut
+###### Author: Arieh @ Bahamut with help from Ellisine @ Bahamut
+
+## Manual fix
 
 This is specifically for copies of FFXI which are managed via Lutris. Similar steps can be followed on Windows, but you can just open `regedit` and start at step 3 instead.
 
@@ -24,6 +26,26 @@ This is specifically for copies of FFXI which are managed via Lutris. Similar st
     c. WindowW to 640
     d. WindowH to 480
     e. As an additional note, you can make the WindowW and WindowH values larger, but if they go above the resolution of the screen you are using, they will no longer be visible when you launch. Also it is best to keep the resolution to a 4:3 (width to height) ratio.
-6. Click ok, close all of the windows and then try opening ffxi again
+6. Click ok and then close all of the windows that were opened and lastly try opening FFXI again. You should be able to see PlayOnline now.
 
-Fun fact: This was originally titled `so playonline has disappeared into the aether of fucking narina`.
+## Fix on launch using scripts
+
+You can create a script to reset the values every time the game is launched using the following script below provided by Ellisine @ Bahamut.
+
+### Finding internal Lutris ID
+The 2nd line of the script given below  requires you to find the internal game ID for FFXI on your system and this can be done using the following 2 steps.
+
+1. Open Lutris, right click on the game you use to launch FFXI (this could also be Windower or Ashita depending on how you have it setup) and click `Configure`.
+
+2. Look for the line underlined in red in the photo on the window that just opened. This will show you what the internal ID of the game is that you will need to use in the script.
+
+### The script
+
+```bash
+#!/bin/bash
+sed -i '/"Window[H|W|X|Y]"=dword:/d' /home/deck/Games/final-fantasy-xi-online/system.reg
+# Replace id on the line below with your local internal ID
+/usr/bin/flatpak run net.lutris.Lutris lutris:rungameid/2
+```
+
+<sub>Fun fact: This was originally titled `so playonline has disappeared into the aether of fucking narina`.</sub>
