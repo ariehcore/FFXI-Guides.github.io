@@ -129,6 +129,12 @@ You can either clear the files from the Lutris cache, or you can link to them di
     4. Scroll down to Wine and click on the left button on the right hand side
     5. In the tab `Runner options`, set the Wine version to `System (10.x)`
 
+<details>
+<summary>todo: connection reset by peer</summary>
+
+https://forums.lutris.net/t/errno-104-connection-reset-by-peer/25137/12/
+</details>
+
 ## I've installed FFXI but my game won't launch, what should I check?
 
 TODO: add this
