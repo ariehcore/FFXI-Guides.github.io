@@ -23,14 +23,14 @@ Personally I recommend avoiding using Steam to install FFXI and instead installi
 
 For Windower you can then install the `Windower 4 Live version` after this. There are also some extra steps and troubleshooting tips mentioned on the [Windower guide](https://docs.windower.net/linux/) as well if you run into any issues.
 
-This guide will not cover installing Ashita after installing FFXI currently, but [Ridge's guide](https://bin.68degrees.no/?678efeeb84b354e8#5ehU14BvFHo5MBwSMJ4RBwRPwhW9QaF83BJiXR7E3CzL) for setting up FFXI on Linux with Ashita is a very good resource to follow.
+This guide will not cover installing Ashita after installing FFXI currently, but [Ridge's guide](https://bin.68degrees.no/?678efeeb84b354e8#5ehU14BvFHo5MBwSMJ4RBwRPwhW9QaF83BJiXR7E3CzL) for setting up FFXI on Linux with Ashita is a very good resource to follow which *is not reliant* on Lutris/Heroic/similar tools.
 
 ### Long guide
 
 For these guides, I did these steps on a Dell XPS 15 9560 laptop running Bazzite with the following specs, however I have also set up FFXI on SteamOS on my Steam Deck OLED using similar steps.
 
 ```
-CPU: Intel Core i7-7700HQ 
+CPU: Intel Core i7-7700HQ
 Integrated GPU: Intel HD Graphics 630
 Discrete GPU: NVIDIA GeForce GTX 1050 Mobile
 Memory: 16GB
@@ -39,13 +39,13 @@ Locale: en_GB.UTF-8
 
 #### Installing FFXI via Lutris
 
-For *all* commands which require you to download or install packages, please check what you are installing/downloading before you install any software. 
+For *all* commands which require you to download or install packages, please check what you are installing/downloading before you install any software.
 
 This guide assumes you have not installed Lutris and that you use your PC in English. If you have installed Lutris already, you can skip the first step. This guide is also a prerequisite for setting up a copy of FFXI that uses Windower/Ashita on your Linux PC if you are unsure of what to do in this case. If you want to play FFXI in Japanese on Linux, unfortunately this guide does not cover this for the time being.
 
 1. Install Lutris using the package manager for your distros. If you prefer using the GUI to install the packages, open that and use that to install Lutris. Otherwise here are some commands for popular distros/base distros if you wish to install from the terminal.
     * For debian-based distros: `sudo apt get update && sudo apt install lutris`
-    * For arch-based distros: 
+    * For arch-based distros:
         * Using pacman: `sudo pacman -Sy lutris`
         * Using paru: `paru -Sy lutris`
         * For CachyOS users: Install both of the packages mentioned on [this page](https://wiki.cachyos.org/configuration/gaming/) on their wiki if you have not already. Despite being packaged separately, the `cachyos-gaming-meta` package is a requirement.
@@ -65,7 +65,7 @@ This guide assumes you have not installed Lutris and that you use your PC in Eng
 ![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20250909_122131.png)
 8. Click `Install` to begin the installation process. This will take some time (like possibly 15 - 20 minutes), so just keep an eye on it for any errors that may occur during the installation process.
     * If errors do occur, check below in the Troubleshooting selection to see if your error was covered otherwise copy the error log to a text file and have it handy for if someone asks "what error happened?"
-9. If no errors occurred and you see the following screen, then you now have a copy of FFXI installed onto your PC! 
+9. If no errors occurred and you see the following screen, then you now have a copy of FFXI installed onto your PC!
 
 #### Configuring FFXI in Lutris
 
@@ -85,16 +85,16 @@ This guide assumes that you have a copy of Final Fantasy XI Online already set u
 ## FAQ
 
 ### Should I use dgvoodoo2 from Lutris?
-While it can work in some cases, you should not use versions higher than v2.8.2, they will not work at all. Ideally if the game works with just dxvk, then you should be ok. 
+While it can work in some cases, you should not use versions higher than v2.8.2, they will not work at all. Ideally if the game works with just dxvk, then you should be ok.
 
 ### Which wine/proton version should I use?
 There are various versions you should not use without specific fixes due to a stuttering issue that exists in some versions of Wine. From experience / other members of the FFXI Community, these are the versions of Wine/Proton that people will generally recommend for playing FFXI with.
 
 * Wine `9.15-9.21` or `10.x`
-* `GE-Proton-10-15` or `GE-Proton-10-21` 
+* `GE-Proton-10-15` or `GE-Proton-10-21`
 
 #### Important note for when you bind a controller
-If you are trying to bind a controller to your copy of FFXI and use a version of Proton/Wine with version number 9 or newer, you may need to an older version of Proton/Wine in order to bind your controller at all. Newer versions of Proton will hijack your gamepad inputs for dialog boxes and this can make binding them legitimately impossible. 
+If you are trying to bind a controller to your copy of FFXI and use a version of Proton/Wine with version number 9 or newer, you may need to an older version of Proton/Wine in order to bind your controller at all. Newer versions of Proton will hijack your gamepad inputs for dialog boxes and this can make binding them legitimately impossible.
 
 Using an older Proton version will work, I personally used the following version below, but I think that any older wine version will work for setting this up.
 ![Lutris window](/assets/images/troubleshooting/linux-guide/Screenshot_20260111_180210.png)
@@ -129,16 +129,6 @@ You can either clear the files from the Lutris cache, or you can link to them di
     4. Scroll down to Wine and click on the left button on the right hand side
     5. In the tab `Runner options`, set the Wine version to `System (10.x)`
 
-<details>
-<summary>todo: connection reset by peer</summary>
-
-https://forums.lutris.net/t/errno-104-connection-reset-by-peer/25137/12/
-</details>
-
-## I've installed FFXI but my game won't launch, what should I check?
-
-TODO: add this
-
 ## Glossary
 
 Will add basic explanations of terms used in the guide for those who are unaware of what the terminology means.
@@ -152,7 +142,7 @@ WINE is an acronym for WINE Is Not (an) Emulator. It is a compatibility layer wh
 
 ### Proton
 
-Valve's gaming-focused fork of Wine which is the backbone of Linux gaming as we know it today. There are a few different forks of Proton as well, but these are less used by the wider community except in specific cases. 
+Valve's gaming-focused fork of Wine which is the backbone of Linux gaming as we know it today. There are a few different forks of Proton as well, but these are less used by the wider community except in specific cases.
 
 ### Lutris
 
